@@ -3,15 +3,13 @@ package com.example.dwaygon.tap_blockv2;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
 
-import java.lang.reflect.Array;
 import java.util.Random;
 
-public class Game_Loop  extends AppCompatActivity implements View.OnClickListener {
+public class game_loop extends AppCompatActivity implements View.OnClickListener {
     Button buttons[] = new Button[BUTTON_IDS.length];
     private static final int[] BUTTON_IDS = {
             R.id.touche0,
@@ -54,7 +52,7 @@ public class Game_Loop  extends AppCompatActivity implements View.OnClickListene
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game__loop);
+        setContentView(R.layout.activity_game_loop);
         GridLayout grille = findViewById(R.id.grille);
         int i = 0;
         for(int id : BUTTON_IDS) {

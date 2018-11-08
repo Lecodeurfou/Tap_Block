@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private View.OnClickListener btnPlay = new View.OnClickListener(){
         @Override
         public void onClick(View v){
-            Intent gameActivity = new Intent(MainActivity.this, Game_Loop.class);
+            Intent gameActivity = new Intent(MainActivity.this, game_loop.class);
             startActivity(gameActivity);
         }
     };
