@@ -1,1 +1,10 @@
 # Tap_Block
+-Creer boucle principale de jeu (Nous deux)
+-Clignotement des dalles(Florian)
+-Implementation compteur(Corentin)
+-Relier compteur au jeu(Corentin)
+-Compteur combo/fail(Corentin)
+-Relier compteur combo/fail au jeu(Corentin)
+-Gestion des couleurs des dalles(Florian)
+-Bon et mauvais click(Nous deux)
+-Menu (Corentin)
