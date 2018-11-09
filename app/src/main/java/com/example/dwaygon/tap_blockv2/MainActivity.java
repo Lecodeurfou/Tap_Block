@@ -10,6 +10,7 @@ import android.util.Log;
 public class MainActivity extends AppCompatActivity {
 
     private Button btn1;
+    private Button btn2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,6 +18,24 @@ public class MainActivity extends AppCompatActivity {
 
         btn1 = (Button) findViewById(R.id.btn1);
         btn1.setOnClickListener(btnPlay);
+        btn2 = (Button) findViewById(R.id.btn2);
+
+
+
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+
+
+
+
+
+
     }
 
     private View.OnClickListener btnPlay = new View.OnClickListener(){
@@ -26,6 +45,9 @@ public class MainActivity extends AppCompatActivity {
             startActivity(gameActivity);
         }
     };
+
+
+
 
 
 
