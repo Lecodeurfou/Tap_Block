@@ -1,6 +1,7 @@
 package com.example.dwaygon.tap_blockv2;
 
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,8 +11,7 @@ import android.widget.GridLayout;
 import java.util.Random;
 
 public class game_loop extends AppCompatActivity implements View.OnClickListener {
-    Button buttons[] = new Button[BUTTON_IDS.length];
-    private static final int[] BUTTON_IDS = {
+    public int[] BUTTON_IDS = {
             R.id.touche0,
             R.id.touche1,
             R.id.touche2,
@@ -39,6 +39,7 @@ public class game_loop extends AppCompatActivity implements View.OnClickListener
             R.id.touche24,
             R.id.touche25,
             R.id.touche26,
+            R.id.touche27,
             R.id.touche28,
             R.id.touche29,
             R.id.touche30,
@@ -48,6 +49,11 @@ public class game_loop extends AppCompatActivity implements View.OnClickListener
             R.id.touche34,
             R.id.touche35,
     };
+    public Button buttons[] = new Button[BUTTON_IDS.length];
+    Button touche36;
+    Button touche37;
+    Button touche38;
+    Button touche39;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,27 +61,58 @@ public class game_loop extends AppCompatActivity implements View.OnClickListener
         setContentView(R.layout.activity_game_loop);
         GridLayout grille = findViewById(R.id.grille);
         int i = 0;
-        for(int id : BUTTON_IDS) {
+        for (int id : BUTTON_IDS) {
             Button button = findViewById(id);
             button.setOnClickListener(this); // maybe
+            button.setBackgroundColor(Color.argb(0, 0, 0, 0));
             buttons[i] = button;
-            i+=1;
+            i += 1;
         }
-
-
-
-
+        touche36 = findViewById(R.id.touche36);
+        touche36.setBackgroundColor(Color.argb(255, 255, 255, 255));
+        touche36.setText("Score:");
+        touche37 = findViewById(R.id.touche37);
+        touche37.setBackgroundColor(Color.argb(255, 255, 255, 255));
+        touche37.setText("0");
+        touche38 = findViewById(R.id.touche38);
+        touche38.setBackgroundColor(Color.argb(255, 255, 255, 255));
+        touche38.setText("Vie");
+        touche39 = findViewById(R.id.touche39);
+        touche39.setBackgroundColor(Color.argb(255, 255, 255, 255));
+        touche39.setText("3");
     }
+
+
     public void onStart() {
         super.onStart();
         Thread background = new Thread(new Runnable() {
             @Override
             public void run() {
                 Random rnd=new Random();
+                int aleabut;
+                aleabut = rnd.nextInt(36);
+                buttons[aleabut].setBackgroundColor(Color.argb(255,rnd.nextInt(256),rnd.nextInt(256),rnd.nextInt(256))); //bis
+                try { Thread.sleep(2000); }
+                catch (InterruptedException e) { return; }
                 while(true) {
+                    ColorDrawable b_color = (ColorDrawable) buttons[aleabut].getBackground();
+                    int a = b_color.getColor();
+                    if (a !=Color.argb(0,0,0,0)) {
+                        buttons[aleabut].setBackgroundColor(Color.argb(0, 0, 0, 0));
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                int convert = Integer.parseInt((touche39.getText()).toString());
+                                convert -= 1;
+                                touche39.setText(Integer.toString(convert));
+                            }
+                        });
+                    }
+                    aleabut = rnd.nextInt(36);
+                    buttons[aleabut].setBackgroundColor(Color.argb(255,rnd.nextInt(256),rnd.nextInt(256),rnd.nextInt(256))); //bis
                     try { Thread.sleep(2000); }
                     catch (InterruptedException e) { return; }
-                    buttons[rnd.nextInt(36)].setBackgroundColor(Color.argb(255,rnd.nextInt(256),rnd.nextInt(256),rnd.nextInt(256))); //bis
+
 
 
                 }
@@ -87,9 +124,18 @@ public class game_loop extends AppCompatActivity implements View.OnClickListener
     @Override
     public void onClick(View v) {
         Button B1 = v.findViewById(v.getId());
-        Random rnd=new Random();  // a ajouter lors de l'event de pop de la touche
-        B1.setBackgroundColor(Color.argb(255,rnd.nextInt(256),rnd.nextInt(256),rnd.nextInt(256))); //bis
-
+        ColorDrawable b_color = (ColorDrawable) B1.getBackground();
+        int a = b_color.getColor();
+        if(a != Color.argb(0,0,0,0)){
+            B1.setBackgroundColor(Color.argb(0,0,0,0));
+            int convert = Integer.parseInt((touche37.getText()).toString());
+            convert += 1;
+            touche37.setText(Integer.toString(convert));
+        }else{
+            int convert = Integer.parseInt((touche39.getText()).toString());
+            convert -= 1;
+            touche39.setText(Integer.toString(convert));
+        }
     }
 
 
