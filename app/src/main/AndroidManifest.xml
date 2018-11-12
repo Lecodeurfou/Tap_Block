@@ -16,7 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".game_loop"></activity>
+        <activity android:name=".game_loop" />
+        <activity android:name=".game_loop_arcade" />
+        <activity android:name=".game_loop_boss"></activity>
     </application>
 
 </manifest>

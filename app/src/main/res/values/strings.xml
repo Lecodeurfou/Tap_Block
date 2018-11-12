@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Tap_BlockV2</string>
+    <string name="boss_mode">Boss Mode</string>
+    <string name="exit">Exit</string>
+    <string name="arcade_mode">Arcade Mode</string>
+    <string name="play">play</string>
 </resources>
