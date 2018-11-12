@@ -92,7 +92,7 @@ public class game_loop extends AppCompatActivity implements View.OnClickListener
                 int aleabut;
                 aleabut = rnd.nextInt(36);
                 buttons[aleabut].setBackgroundColor(Color.argb(255,rnd.nextInt(256),rnd.nextInt(256),rnd.nextInt(256))); //bis
-                try { Thread.sleep(2000); }
+                try { Thread.sleep(1000); }
                 catch (InterruptedException e) { return; }
                 while(true) {
                     ColorDrawable b_color = (ColorDrawable) buttons[aleabut].getBackground();
@@ -110,7 +110,7 @@ public class game_loop extends AppCompatActivity implements View.OnClickListener
                     }
                     aleabut = rnd.nextInt(36);
                     buttons[aleabut].setBackgroundColor(Color.argb(255,rnd.nextInt(256),rnd.nextInt(256),rnd.nextInt(256))); //bis
-                    try { Thread.sleep(2000); }
+                    try { Thread.sleep(1000); }
                     catch (InterruptedException e) { return; }
 
 

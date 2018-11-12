@@ -70,7 +70,7 @@ public class game_loop_boss extends AppCompatActivity implements View.OnClickLis
         }
         touche36 = findViewById(R.id.touche36);
         touche36.setBackgroundColor(Color.argb(255, 255, 255, 255));
-        touche36.setText("Score:");
+        touche36.setText("Boss life:");
         touche37 = findViewById(R.id.touche37);
         touche37.setBackgroundColor(Color.argb(255, 255, 255, 255));
         touche37.setText("0");
@@ -88,33 +88,28 @@ public class game_loop_boss extends AppCompatActivity implements View.OnClickLis
         Thread background = new Thread(new Runnable() {
             @Override
             public void run() {
+                long startTime = System.currentTimeMillis();
+                long endtime = startTime;
                 Random rnd=new Random();
                 int aleabut;
                 aleabut = rnd.nextInt(36);
                 buttons[aleabut].setBackgroundColor(Color.argb(255,rnd.nextInt(256),rnd.nextInt(256),rnd.nextInt(256))); //bis
                 try { Thread.sleep(2000); }
                 catch (InterruptedException e) { return; }
-                while(true) {
+                while((endtime - startTime) < 5000) {
                     ColorDrawable b_color = (ColorDrawable) buttons[aleabut].getBackground();
                     int a = b_color.getColor();
                     if (a !=Color.argb(0,0,0,0)) {
                         buttons[aleabut].setBackgroundColor(Color.argb(0, 0, 0, 0));
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                int convert = Integer.parseInt((touche39.getText()).toString());
-                                convert -= 1;
-                                touche39.setText(Integer.toString(convert));
-                            }
-                        });
                     }
                     aleabut = rnd.nextInt(36);
                     buttons[aleabut].setBackgroundColor(Color.argb(255,rnd.nextInt(256),rnd.nextInt(256),rnd.nextInt(256))); //bis
                     try { Thread.sleep(2000); }
                     catch (InterruptedException e) { return; }
-
-
-
+                    endtime = System.currentTimeMillis();
+                }
+                for(Button but : buttons){
+                    but.setBackgroundColor(Color.argb(255, 0, 0, 0));
                 }
             }
         });
