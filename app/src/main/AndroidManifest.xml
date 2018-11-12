@@ -17,7 +17,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".game_loop" />
-        <activity android:name=".game_loop_arcade" />
         <activity android:name=".game_loop_boss"></activity>
     </application>
 

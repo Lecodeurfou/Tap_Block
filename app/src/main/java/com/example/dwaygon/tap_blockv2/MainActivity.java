@@ -12,7 +12,6 @@ public class MainActivity extends AppCompatActivity {
     private Button btn1;
     private Button btn2;
     private Button btn3;
-    private Button btn4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,10 +33,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         btn3=(Button) findViewById(R.id.btn3);
-        btn3.setOnClickListener(btnArcade);
+        btn3.setOnClickListener(btnBoss);
 
-        btn4=(Button) findViewById(R.id.btn4);
-        btn4.setOnClickListener(btnBoss);
 
 
 
@@ -53,16 +50,6 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
-
-
-
-    private View.OnClickListener btnArcade = new View.OnClickListener(){
-        @Override
-        public void onClick(View v){
-            Intent gameActivity = new Intent(MainActivity.this, game_loop_arcade.class);
-            startActivity(gameActivity);
-        }
-    };
 
 
     private View.OnClickListener btnBoss = new View.OnClickListener(){
