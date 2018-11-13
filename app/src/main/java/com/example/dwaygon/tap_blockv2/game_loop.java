@@ -62,6 +62,7 @@ public class game_loop extends AppCompatActivity implements View.OnClickListener
         setContentView(R.layout.activity_game_loop);
         GridLayout grille = findViewById(R.id.grille);
         int i = 0;
+
         for (int id : BUTTON_IDS) {
             Button button = findViewById(id);
             button.setOnClickListener(this); // maybe
@@ -89,6 +90,11 @@ public class game_loop extends AppCompatActivity implements View.OnClickListener
         Thread background = new Thread(new Runnable() {
             @Override
             public void run() {
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 Random rnd=new Random();
                 int aleabut;
                 aleabut = rnd.nextInt(36);

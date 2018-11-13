@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".game_loop">
+    tools:context=".game_loop"
+    android:background="@drawable/tavern_arcade">
 
     <android.support.v7.widget.GridLayout
         android:id="@+id/grille"
