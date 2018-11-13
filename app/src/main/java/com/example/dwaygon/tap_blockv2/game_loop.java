@@ -1,5 +1,6 @@
 package com.example.dwaygon.tap_blockv2;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
@@ -94,7 +95,7 @@ public class game_loop extends AppCompatActivity implements View.OnClickListener
                 buttons[aleabut].setBackgroundColor(Color.argb(255,rnd.nextInt(256),rnd.nextInt(256),rnd.nextInt(256))); //bis
                 try { Thread.sleep(1000); }
                 catch (InterruptedException e) { return; }
-                while(true) {
+                while(Integer.parseInt((touche39.getText()).toString()) > 0) {
                     ColorDrawable b_color = (ColorDrawable) buttons[aleabut].getBackground();
                     int a = b_color.getColor();
                     if (a !=Color.argb(0,0,0,0)) {
@@ -112,9 +113,28 @@ public class game_loop extends AppCompatActivity implements View.OnClickListener
                     buttons[aleabut].setBackgroundColor(Color.argb(255,rnd.nextInt(256),rnd.nextInt(256),rnd.nextInt(256))); //bis
                     try { Thread.sleep(1000); }
                     catch (InterruptedException e) { return; }
+                }
+                buttons[aleabut].setBackgroundColor(Color.argb(0,0,0,0));
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        for(Button id : buttons ){
+                            id.setEnabled(false);
 
+                        }
+                    }
+                });
 
-
+                //call score_activity;
+                if (Integer.parseInt((touche37.getText()).toString())==0){
+                    Intent gameActivity = new Intent(game_loop.this, score_activity.class);
+                    gameActivity.putExtra("scorekey",-1);
+                    startActivity(gameActivity);
+                }
+                else {
+                    Intent gameActivity = new Intent(game_loop.this, score_activity.class);
+                    gameActivity.putExtra("scorekey", Integer.parseInt((touche37.getText()).toString()));
+                    startActivity(gameActivity);
                 }
             }
         });

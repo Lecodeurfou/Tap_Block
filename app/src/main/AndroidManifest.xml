@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".game_loop" />
-        <activity android:name=".game_loop_boss"></activity>
+        <activity android:name=".game_loop_boss" />
+        <activity android:name=".score_activity"></activity>
     </application>
 
 </manifest>

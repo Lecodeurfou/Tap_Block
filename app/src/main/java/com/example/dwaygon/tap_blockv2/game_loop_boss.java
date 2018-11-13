@@ -1,5 +1,6 @@
 package com.example.dwaygon.tap_blockv2;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
@@ -108,9 +109,21 @@ public class game_loop_boss extends AppCompatActivity implements View.OnClickLis
                     catch (InterruptedException e) { return; }
                     endtime = System.currentTimeMillis();
                 }
-                for(Button but : buttons){
-                    but.setBackgroundColor(Color.argb(255, 0, 0, 0));
-                }
+                buttons[aleabut].setBackgroundColor(Color.argb(0,0,0,0));
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        for(Button id : buttons ){
+                            id.setEnabled(false);
+
+                        }
+                    }
+                });
+                //call score activity
+                Intent gameActivity = new Intent(game_loop_boss.this, score_activity.class);
+                gameActivity.putExtra("timekey",(endtime-startTime));
+                startActivity(gameActivity);
+
             }
         });
         background.start();
