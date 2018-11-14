@@ -37,10 +37,15 @@
         android:id="@+id/btn2"
         android:layout_width="150dp"
         android:layout_height="70dp"
-        android:layout_marginEnd="127dp"
+        android:layout_marginStart="218dp"
+        android:layout_marginTop="112dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="19dp"
         android:background="@android:color/holo_blue_dark"
         android:text="@string/exit"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn3" />
 
 
