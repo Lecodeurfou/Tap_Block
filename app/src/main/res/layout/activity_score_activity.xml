@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".score_activity">
+    tools:context=".score_activity"
+    android:background="@drawable/heaven">
 
     <TextView
         android:id="@+id/score_text"
@@ -12,8 +13,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="102dp"
         android:layout_marginEnd="220dp"
-        android:layout_marginBottom="260dp"
-        android:textSize="36sp"
+        android:layout_marginBottom="258dp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,4 +38,35 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.843" />
+
+    <ImageButton
+        android:id="@+id/imageButton_backmenu"
+        android:layout_width="81dp"
+        android:layout_height="82dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="131dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginBottom="77dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton_replay"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/score_text"
+        app:layout_constraintVertical_bias="1.0"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageButton
+        android:id="@+id/imageButton_replay"
+        android:layout_width="81dp"
+        android:layout_height="82dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="131dp"
+        android:layout_marginEnd="95dp"
+        android:layout_marginBottom="77dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageButton_backmenu"
+        app:layout_constraintTop_toBottomOf="@+id/score_text_number"
+        tools:srcCompat="@tools:sample/avatars" />
+
+
 </android.support.constraint.ConstraintLayout>
