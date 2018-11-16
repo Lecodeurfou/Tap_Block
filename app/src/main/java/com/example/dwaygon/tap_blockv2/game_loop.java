@@ -91,7 +91,7 @@ public class game_loop extends AppCompatActivity implements View.OnClickListener
             @Override
             public void run() {
                 try {
-                    Thread.sleep(2000);
+                    Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

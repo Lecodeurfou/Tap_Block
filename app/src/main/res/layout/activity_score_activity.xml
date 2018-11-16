@@ -5,68 +5,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".score_activity"
-    android:background="@drawable/heaven">
-
-    <TextView
-        android:id="@+id/score_text"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="102dp"
-        android:layout_marginEnd="220dp"
-        android:layout_marginBottom="258dp"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.846" />
-
-    <TextView
-        android:id="@+id/score_text_number"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="200dp"
-        android:layout_marginEnd="220dp"
-        android:layout_marginBottom="258dp"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.843" />
+    android:background="@drawable/scoretab">
 
     <ImageButton
         android:id="@+id/imageButton_backmenu"
-        android:layout_width="81dp"
-        android:layout_height="82dp"
-        android:layout_marginStart="75dp"
-        android:layout_marginTop="131dp"
-        android:layout_marginEnd="52dp"
-        android:layout_marginBottom="77dp"
+        android:layout_width="55dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton_replay"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/score_text"
-        app:layout_constraintVertical_bias="1.0"
         tools:srcCompat="@tools:sample/avatars" />
 
     <ImageButton
         android:id="@+id/imageButton_replay"
-        android:layout_width="81dp"
-        android:layout_height="82dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="131dp"
-        android:layout_marginEnd="95dp"
-        android:layout_marginBottom="77dp"
+        android:layout_width="55dp"
+        android:layout_height="54dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageButton_backmenu"
-        app:layout_constraintTop_toBottomOf="@+id/score_text_number"
         tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/score_text"
+        android:layout_width="106dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="140dp"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.963" />
 
 
 </android.support.constraint.ConstraintLayout>

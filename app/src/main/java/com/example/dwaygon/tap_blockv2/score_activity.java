@@ -27,7 +27,7 @@ public class score_activity extends AppCompatActivity {
             //The key argument here must match that used in the other activity
 
             TextView view = findViewById(R.id.score_text);
-            TextView view_score= findViewById(R.id.score_text_number);
+
 
 
             btn_replay =(ImageButton) findViewById(R.id.imageButton_replay);
@@ -37,7 +37,7 @@ public class score_activity extends AppCompatActivity {
 
             if (score == 0) { //Boss
 
-                if(score_boss>=5000){
+                if(score_boss>=20000){
                     view.setText("Vous avez été défait par votre enemi ...");
                     //add image etc ...
                     
@@ -60,8 +60,7 @@ public class score_activity extends AppCompatActivity {
 
             }
             if (score != 0) { //Arcade
-                view.setText("Score : ");
-                view_score.setText(Integer.toString(score));
+                view.setText("Score : " + Integer.toString(score));
 
 
 

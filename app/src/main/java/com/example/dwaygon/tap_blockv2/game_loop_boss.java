@@ -53,8 +53,6 @@ public class game_loop_boss extends AppCompatActivity implements View.OnClickLis
     public Button buttons[] = new Button[BUTTON_IDS.length];
     Button touche36;
     Button touche37;
-    Button touche38;
-    Button touche39;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,13 +72,8 @@ public class game_loop_boss extends AppCompatActivity implements View.OnClickLis
         touche36.setText("Boss life:");
         touche37 = findViewById(R.id.touche37);
         touche37.setBackgroundColor(Color.argb(255, 255, 255, 255));
-        touche37.setText("0");
-        touche38 = findViewById(R.id.touche38);
-        touche38.setBackgroundColor(Color.argb(255, 255, 255, 255));
-        touche38.setText("Vie");
-        touche39 = findViewById(R.id.touche39);
-        touche39.setBackgroundColor(Color.argb(255, 255, 255, 255));
-        touche39.setText("3");
+        touche37.setText("10");
+
     }
 
 
@@ -95,9 +88,12 @@ public class game_loop_boss extends AppCompatActivity implements View.OnClickLis
                 int aleabut;
                 aleabut = rnd.nextInt(36);
                 buttons[aleabut].setBackgroundColor(Color.argb(255,rnd.nextInt(256),rnd.nextInt(256),rnd.nextInt(256))); //bis
-                try { Thread.sleep(2000); }
+                try { Thread.sleep(1000); }
                 catch (InterruptedException e) { return; }
-                while((endtime - startTime) < 5000) {
+                while((endtime - startTime) < 20000) {
+                    if(Integer.parseInt((touche37.getText()).toString()) == 0){
+                        break;
+                    }
                     ColorDrawable b_color = (ColorDrawable) buttons[aleabut].getBackground();
                     int a = b_color.getColor();
                     if (a !=Color.argb(0,0,0,0)) {
@@ -105,7 +101,7 @@ public class game_loop_boss extends AppCompatActivity implements View.OnClickLis
                     }
                     aleabut = rnd.nextInt(36);
                     buttons[aleabut].setBackgroundColor(Color.argb(255,rnd.nextInt(256),rnd.nextInt(256),rnd.nextInt(256))); //bis
-                    try { Thread.sleep(2000); }
+                    try { Thread.sleep(1000); }
                     catch (InterruptedException e) { return; }
                     endtime = System.currentTimeMillis();
                 }
@@ -134,15 +130,11 @@ public class game_loop_boss extends AppCompatActivity implements View.OnClickLis
         Button B1 = v.findViewById(v.getId());
         ColorDrawable b_color = (ColorDrawable) B1.getBackground();
         int a = b_color.getColor();
-        if(a != Color.argb(0,0,0,0)){
-            B1.setBackgroundColor(Color.argb(0,0,0,0));
+        if(a != Color.argb(0,0,0,0)) {
+            B1.setBackgroundColor(Color.argb(0, 0, 0, 0));
             int convert = Integer.parseInt((touche37.getText()).toString());
-            convert += 1;
-            touche37.setText(Integer.toString(convert));
-        }else{
-            int convert = Integer.parseInt((touche39.getText()).toString());
             convert -= 1;
-            touche39.setText(Integer.toString(convert));
+            touche37.setText(Integer.toString(convert));
         }
     }
 
