@@ -119,6 +119,7 @@ public class game_loop_boss extends AppCompatActivity implements View.OnClickLis
                 Intent gameActivity = new Intent(game_loop_boss.this, score_activity.class);
                 gameActivity.putExtra("timekey",(endtime-startTime));
                 startActivity(gameActivity);
+                finish();
 
             }
         });

@@ -136,11 +136,13 @@ public class game_loop extends AppCompatActivity implements View.OnClickListener
                     Intent gameActivity = new Intent(game_loop.this, score_activity.class);
                     gameActivity.putExtra("scorekey",-1);
                     startActivity(gameActivity);
+                    finish();
                 }
                 else {
                     Intent gameActivity = new Intent(game_loop.this, score_activity.class);
                     gameActivity.putExtra("scorekey", Integer.parseInt((touche37.getText()).toString()));
                     startActivity(gameActivity);
+                    finish();
                 }
             }
         });

@@ -13,7 +13,7 @@
         android:layout_height="70dp"
         android:layout_marginStart="60dp"
         android:layout_marginBottom="16dp"
-        android:background="@drawable/buttonsBack"
+        android:background="@drawable/buttonsback"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         />
@@ -27,7 +27,7 @@
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@drawable/buttonsReplay"/>
+        android:background="@drawable/buttonsreplay"/>
 
     <TextView
         android:id="@+id/score_text"

@@ -28,7 +28,8 @@ public class MainActivity extends AppCompatActivity {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                 finish();
+                // System.exit(0);
             }
         });
 
@@ -47,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View v){
             Intent gameActivity = new Intent(MainActivity.this, game_loop.class);
             startActivity(gameActivity);
+            finish();
         }
     };
 
@@ -57,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View v){
             Intent gameActivity = new Intent(MainActivity.this, game_loop_boss.class);
             startActivity(gameActivity);
+            finish();
         }
     };
 

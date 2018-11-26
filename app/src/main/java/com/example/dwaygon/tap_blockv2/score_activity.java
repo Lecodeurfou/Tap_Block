@@ -53,6 +53,7 @@ public class score_activity extends AppCompatActivity {
                     public void onClick(View v) {
                         Intent gameActivity = new Intent(score_activity.this, game_loop_boss.class);
                         startActivity(gameActivity);
+                        finish();
                     }
                 });
 
@@ -69,6 +70,7 @@ public class score_activity extends AppCompatActivity {
                     public void onClick(View v) {
                         Intent gameActivity = new Intent(score_activity.this, game_loop.class);
                         startActivity(gameActivity);
+                        finish();
                     }
                 });
 
@@ -89,9 +91,10 @@ public class score_activity extends AppCompatActivity {
         btn_backmenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              //  finish();
+             // finishActivity(0);
                 Intent gameActivity = new Intent(score_activity.this, MainActivity.class);
                 startActivity(gameActivity);
+                finish();
             }
         });
 
