@@ -9,23 +9,25 @@
 
     <ImageButton
         android:id="@+id/imageButton_backmenu"
-        android:layout_width="55dp"
-        android:layout_height="54dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:layout_marginStart="60dp"
         android:layout_marginBottom="16dp"
+        android:background="@drawable/buttonsBack"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        />
+
 
     <ImageButton
         android:id="@+id/imageButton_replay"
-        android:layout_width="55dp"
-        android:layout_height="54dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:layout_marginEnd="64dp"
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:background="@drawable/buttonsReplay"/>
 
     <TextView
         android:id="@+id/score_text"
