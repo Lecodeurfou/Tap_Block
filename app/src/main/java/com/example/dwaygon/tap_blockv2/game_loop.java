@@ -95,11 +95,14 @@ public class game_loop extends AppCompatActivity implements View.OnClickListener
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+                long startTime = System.currentTimeMillis();
+                long endtime = startTime;
+                long delai = 2000;
                 Random rnd=new Random();
                 int aleabut;
                 aleabut = rnd.nextInt(36);
                 buttons[aleabut].setBackgroundColor(Color.argb(255,rnd.nextInt(256),rnd.nextInt(256),rnd.nextInt(256))); //bis
-                try { Thread.sleep(1000); }
+                try { Thread.sleep(delai); }
                 catch (InterruptedException e) { return; }
                 while(Integer.parseInt((touche39.getText()).toString()) > 0) {
                     ColorDrawable b_color = (ColorDrawable) buttons[aleabut].getBackground();
@@ -117,8 +120,13 @@ public class game_loop extends AppCompatActivity implements View.OnClickListener
                     }
                     aleabut = rnd.nextInt(36);
                     buttons[aleabut].setBackgroundColor(Color.argb(255,rnd.nextInt(256),rnd.nextInt(256),rnd.nextInt(256))); //bis
-                    try { Thread.sleep(1000); }
+                    try { Thread.sleep(delai); }
                     catch (InterruptedException e) { return; }
+                    endtime = System.currentTimeMillis();
+                    if((endtime - startTime) < 5000){
+                        delai = delai / 2;
+                        startTime = endtime;
+                    }
                 }
                 buttons[aleabut].setBackgroundColor(Color.argb(0,0,0,0));
                 runOnUiThread(new Runnable() {
