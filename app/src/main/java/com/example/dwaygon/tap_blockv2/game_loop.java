@@ -85,6 +85,21 @@ public class game_loop extends AppCompatActivity implements View.OnClickListener
     }
 
 
+    private int choose_color(){
+        Random rnd=new Random();
+        int aleacol = rnd.nextInt(3);
+        switch (aleacol){
+            case 0:
+                return Color.argb(255,0,160,0);
+            case 1:
+                return Color.argb(255,0,0,160);
+            case 2:
+                return Color.argb(255,100,69,19);
+
+        }
+        return 0;
+    }
+
     public void onStart() {
         super.onStart();
         Thread background = new Thread(new Runnable() {
@@ -101,7 +116,7 @@ public class game_loop extends AppCompatActivity implements View.OnClickListener
                 Random rnd=new Random();
                 int aleabut;
                 aleabut = rnd.nextInt(36);
-                buttons[aleabut].setBackgroundColor(Color.argb(255,rnd.nextInt(256),rnd.nextInt(256),rnd.nextInt(256))); //bis
+                buttons[aleabut].setBackgroundColor(choose_color());
                 try { Thread.sleep(delai); }
                 catch (InterruptedException e) { return; }
                 while(Integer.parseInt((touche39.getText()).toString()) > 0) {
@@ -119,11 +134,11 @@ public class game_loop extends AppCompatActivity implements View.OnClickListener
                         });
                     }
                     aleabut = rnd.nextInt(36);
-                    buttons[aleabut].setBackgroundColor(Color.argb(255,rnd.nextInt(256),rnd.nextInt(256),rnd.nextInt(256))); //bis
+                    buttons[aleabut].setBackgroundColor(choose_color()); //bis
                     try { Thread.sleep(delai); }
                     catch (InterruptedException e) { return; }
                     endtime = System.currentTimeMillis();
-                    if((endtime - startTime) < 5000){
+                    if((endtime - startTime) > 5000){
                         delai = delai / 2;
                         startTime = endtime;
                     }

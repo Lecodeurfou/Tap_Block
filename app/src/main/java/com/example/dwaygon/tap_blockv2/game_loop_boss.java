@@ -76,6 +76,20 @@ public class game_loop_boss extends AppCompatActivity implements View.OnClickLis
 
     }
 
+    private int choose_color(){
+        Random rnd=new Random();
+        int aleacol = rnd.nextInt(3);
+        switch (aleacol){
+            case 0:
+                return Color.argb(255,160,0,0);
+            case 1:
+                return Color.argb(255,200,120,0);
+            case 2:
+                return Color.argb(255,255,255,0);
+
+        }
+        return 0;
+    }
 
     public void onStart() {
         super.onStart();
@@ -87,7 +101,7 @@ public class game_loop_boss extends AppCompatActivity implements View.OnClickLis
                 Random rnd=new Random();
                 int aleabut;
                 aleabut = rnd.nextInt(36);
-                buttons[aleabut].setBackgroundColor(Color.argb(255,rnd.nextInt(256),rnd.nextInt(256),rnd.nextInt(256))); //bis
+                buttons[aleabut].setBackgroundColor(choose_color()); //bis
                 try { Thread.sleep(1000); }
                 catch (InterruptedException e) { return; }
                 while((endtime - startTime) < 20000) {
@@ -100,7 +114,7 @@ public class game_loop_boss extends AppCompatActivity implements View.OnClickLis
                         buttons[aleabut].setBackgroundColor(Color.argb(0, 0, 0, 0));
                     }
                     aleabut = rnd.nextInt(36);
-                    buttons[aleabut].setBackgroundColor(Color.argb(255,rnd.nextInt(256),rnd.nextInt(256),rnd.nextInt(256))); //bis
+                    buttons[aleabut].setBackgroundColor(choose_color()); //bis
                     try { Thread.sleep(1000); }
                     catch (InterruptedException e) { return; }
                     endtime = System.currentTimeMillis();
