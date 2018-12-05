@@ -57,7 +57,7 @@ public class game_loop_boss extends AppCompatActivity implements View.OnClickLis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game_loop);
+        setContentView(R.layout.activity_game_loop_boss);
         GridLayout grille = findViewById(R.id.grille);
         int i = 0;
         for (int id : BUTTON_IDS) {
